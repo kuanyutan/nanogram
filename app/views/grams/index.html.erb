@@ -1,6 +1,10 @@
 <% @grams.each do |gram| %>
 <div>
   <div>
+  <%= image_tag gram.image_url %>
+  </div>
+
+  <div>
   <%= link_to(gram.title, gram) %>
   </div>
 
