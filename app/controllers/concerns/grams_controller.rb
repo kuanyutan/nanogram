@@ -1,14 +1,17 @@
 class GramsController < ApplicationController
   def index
-    @grams = Gram.order(created_at: :desc).page(params[:page]).per(5)
+    @grams = Gram.page(params[:page]).per(5)
   end
 
   def new
+
+    redirect_to root_path unless current_user
     @gram = Gram.new
   end
 
   def create
     @gram = Gram.new(model_params)
+    @gram.user = current_user
     if @gram.save
       flash[:notice] = 'Gram successfully created'
       redirect_to @gram
