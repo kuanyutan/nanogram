@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby2.3
+#!/usr/bin/env ruby
 begin
   spring_bin_path = File.expand_path('../spring', __FILE__)
   load spring_bin_path
